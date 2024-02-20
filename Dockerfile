@@ -9,6 +9,7 @@ RUN yarn config set network-timeout 600000 -g && yarn install --production
 ENV PATH /opt/node_modules/.bin:$PATH
 WORKDIR /opt/app
 COPY . .
+RUN yarn install
 RUN yarn build
 
 # Creating final production image
