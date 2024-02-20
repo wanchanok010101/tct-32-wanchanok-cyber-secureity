@@ -6,7 +6,7 @@ services:
     image: wanchanok/app/v1.0:latest
     container_name: my-app
     ports:
-      - "1337:1337"
+      - ${PORT}
     environment:
       DATABASE_CLIENT: postgres
       DATABASE_HOST: ${DATABASE_HOST}
@@ -21,7 +21,7 @@ services:
     image: postgres:latest
     container_name: my-db
     ports:
-      - "5432:5432"
+      - ${POSTGRES_PORT}
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
