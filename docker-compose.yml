@@ -1,12 +1,10 @@
 version: '3'
-
-
 services:
   app:
-    image: wanchanok/app/v1.0:latest
+    image: wanchanok/app:1.0
     container_name: my-app
     ports:
-      - ${PORT}
+      - ${PORT}:1337
     environment:
       DATABASE_CLIENT: postgres
       DATABASE_HOST: ${DATABASE_HOST}
@@ -15,19 +13,15 @@ services:
       DATABASE_USERNAME: ${DATABASE_USERNAME}
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
       DATABASE_SSL: false
-
-
   db:
     image: postgres:latest
     container_name: my-db
     ports:
-      - ${POSTGRES_PORT}
+      - ${POSTGRES_PORT}:5432
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-    volumes:
-      - ./db-data:/var/lib/postgresql/data
 
     
 

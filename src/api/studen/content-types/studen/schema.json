@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "studens",
+  "info": {
+    "singularName": "studen",
+    "pluralName": "studens",
+    "displayName": "Studen",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "mobile": {
+      "type": "string",
+      "required": true,
+      "minlength": 10,
+      "maxlength": 10
+    },
+    "classrooms": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::classroom.classroom",
+      "mappedBy": "studens"
+    }
+  }
+}
