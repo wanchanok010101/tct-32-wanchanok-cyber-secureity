@@ -865,7 +865,7 @@ export interface ApiStudenStuden extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String;
-    mobile: Attribute.String & Attribute.Required;
+    PhoneNumber: Attribute.String & Attribute.Required;
     classrooms: Attribute.Relation<
       'api::studen.studen',
       'manyToMany',
